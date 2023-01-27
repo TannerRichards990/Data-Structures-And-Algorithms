@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/TannerRichards990/Data-Structures-And-Algorithms/issues"
   },
-  "homepage": "https://github.com/TannerRichards990/Data-Structures-And-Algorithms#readme"
+  "homepage": "https://github.com/TannerRichards990/Data-Structures-And-Algorithms#readme",
+  "dependencies": {
+    "jest": "^29.4.1"
+  }
 }
