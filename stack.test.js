@@ -1,30 +1,37 @@
 const Stack = require("./stack");
 
-test("stack is a class", () => {
-  expect(typeof Stack.prototype.constructor).toEqual("function");
-});
+describe("Stack", () => {
+  let stack;
 
-test("can add an item to the stack", () => {
-  const s = new Stack();
-  s.push(1);
-  expect(s.peek()).toEqual(1);
-  s.push(2);
-  expect(s.peek()).toEqual(2);
-});
+  beforeEach(() => {
+    stack = new Stack();
+  });
 
-test("can remove an item from the stack", () => {
-  const s = new Stack();
-  s.push(1);
-  s.push(2);
-  expect(s.pop()).toEqual(2);
-  expect(s.pop()).toEqual(1);
-  expect(s.pop()).toBeNull();
-});
+  test("push() adds an item to the stack", () => {
+    stack.push("fox");
+    stack.push("goose");
+    expect(stack.array).toEqual(["fox", "goose"]);
+  });
 
-test("peeks at the top item on the stack", () => {
-  const s = new Stack();
-  s.push(1);
-  expect(s.peek()).toEqual(1);
-  s.push(2);
-  expect(s.peek()).toEqual(2);
+  test("pop() removes and returns the last item in the stack", () => {
+    stack.push("fox");
+    stack.push("goose");
+    expect(stack.pop()).toBe("goose");
+    expect(stack.array).toEqual(["fox"]);
+  });
+
+  test("pop() returns null when the stack is empty", () => {
+    expect(stack.pop()).toBeNull();
+  });
+
+  test("peek() returns the last item in the stack", () => {
+    stack.push("fox");
+    stack.push("goose");
+    expect(stack.peek()).toBe("goose");
+    expect(stack.array).toEqual(["fox", "goose"]);
+  });
+
+  test("peek() returns null when the stack is empty", () => {
+    expect(stack.peek()).toBeNull();
+  });
 });
