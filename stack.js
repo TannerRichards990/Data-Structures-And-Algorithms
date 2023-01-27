@@ -11,6 +11,13 @@ class Stack {
     if (this.array.length === 0) {
       return null;
     }
+    return this.array.pop();
+  }
+
+  peek() {
+    if (this.array.length === 0) {
+      return null;
+    }
     return this.array[this.array.length - 1];
   }
 }
@@ -27,3 +34,5 @@ console.log(stack.pop());
 console.log(stack.peek());
 console.log(stack.pop());
 console.log(stack.pop());
+
+module.exports = Stack;
