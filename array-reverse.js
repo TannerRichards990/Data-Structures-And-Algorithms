@@ -27,3 +27,5 @@ function reverseArr(arr) {
 }
 
 console.log(reverseArr([12, 3, 5, 7]));
+
+module.exports = { Stack, reverseArr };
